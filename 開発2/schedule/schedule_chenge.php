@@ -11,8 +11,8 @@
 
 <?php
 session_start();
-if(isset($_SESSION['group_id']) == true && isset($_SESSION['aikotoba']) == true){
-    header('Location: ../Calendar/calendar.php');
+if(isset($_SESSION['mail'])==false || isset($_SESSION['pass'])==false || isset($_SESSION['word']) || isset($_SESSION['group_id'])){
+    header('Location: ../2_Login/login.php');
 }
 ?>
 

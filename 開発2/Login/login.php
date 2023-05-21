@@ -11,10 +11,9 @@
 <?php
 session_start();
 if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
-    header('Location: ../3_Mypage/mypage.php');
+    header('Location: g_login.php');
 }
 ?>
-
 <form action="login_check.php" method="post">
     <br><br><br><br>
     <article>

@@ -10,7 +10,7 @@ foreach($searchArray as $row){
     $_SESSION['group_id'] = $row['group_id'];
     $_SESSION['word'] = $row['word'];
     $_SESSION['group_name'] = $row['group_name'];
-    header('Location: ../Mypage/mypage.php');
+    header('Location: ../Calendar/calendar.php');
 }
 if(count($searchArray) == 0){
     header('Location: g_login.php');

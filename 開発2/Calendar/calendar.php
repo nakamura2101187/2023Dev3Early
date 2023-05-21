@@ -1,7 +1,7 @@
-
-
-
 <?php
+
+session_start();
+    
 // タイムゾーンを設定
 date_default_timezone_set('Asia/Tokyo');
 
@@ -136,6 +136,12 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
                 }
             ?>
         </table>
+
+        <form action="?" method="post"> 
+        <button type = "submit" formaction="../schedule/schedule_check.php">予定を確認する</button>
+        <button type = "submit" formaction="../schedule/schedule_addition.php">予定を追加する</button>
+
     </div>
+    </form>
 </body>
-</html>
+<script>
