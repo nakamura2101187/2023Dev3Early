@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-    
+
+
+
 // タイムゾーンを設定
 date_default_timezone_set('Asia/Tokyo');
 
@@ -118,6 +120,11 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 </style>
 </head>
 <body>
+<form action="?" method="post"> 
+<button type = "submit" formaction="../logout.php">ログアウト</button><br>
+<?php 
+    echo $_SESSION["user"]["g_name"];
+    ?>
     <div class="container">
         <h3 class="mb-5"><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
         <table class="table table-bordered">
@@ -137,7 +144,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             ?>
         </table>
 
-        <form action="?" method="post"> 
         <button type = "submit" formaction="../schedule/schedule_check.php">予定を確認する</button>
         <button type = "submit" formaction="../schedule/schedule_addition.php">予定を追加する</button>
 

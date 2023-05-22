@@ -27,8 +27,8 @@ while($g == 0){
 
 }
 
-$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"]);
-$group = $dao ->ginsertUser($rand,$_SESSION["user"]["aikotoba"],$_SESSION["user"]["name"]);
+$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"],$_SESSION["user"]["name"]);
+$group = $dao ->ginsertUser($rand,$_SESSION["user"]["aikotoba"],$_SESSION["user"]["g_name"]);
 
 
 if(isset($_SESSION["user"]["name"]) && isset($_SESSION["user"]["aikotoba"])){

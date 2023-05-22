@@ -10,10 +10,15 @@
 <body>
 
 <?php
+
+//セッションの開始
 session_start();
+
+//グループIDと、あいことばがセッションにあれば、カレンダー画面へと遷移
 if(isset($_SESSION['group_id']) == true && isset($_SESSION['aikotoba']) == true){
     header('Location: ../Calendar/calendar.php');
 }
+
 ?>
 
 <form action="g_login_check.php" method="post">

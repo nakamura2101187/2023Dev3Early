@@ -1,7 +1,7 @@
 <?php
 class DAO{
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=kaihatu2;charset=utf8','webuser','abccsd2');
+        $pdo = new PDO('mysql:host=localhost;dbname=kaihatu2;charset=utf8','a','abccsd2');
         return $pdo;
     }
 
@@ -17,15 +17,16 @@ class DAO{
     }
 
     // 新規登録時にユーザ情報を登録する
-    public function insertUser($mail,$pass){
+    public function insertUser($mail,$pass,$name){
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO account(mail,pass)
-                VALUES(?,?)";
+        $sql = "INSERT INTO account(mail,pass,`name`)
+                VALUES(?,?,?)";
 
         $ps = $pdo->prepare($sql);
 
         $ps->bindValue(1,$mail,PDO::PARAM_STR);
         $ps->bindValue(2,$pass,PDO::PARAM_STR);
+        $ps->bindValue(3,$name,PDO::PARAM_STR);
 
         $ps->execute();
     }
@@ -70,34 +71,38 @@ class DAO{
         return $searchArray;
     }
 
+    //スケジュールを確認する為にグループで登録したスケジュールを全権表示する
     public function schedule_check($id){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM schedule WHERE group_id = ?";
         $ps = $pdo -> prepare($sql);
-        $ps ->bindValue(1,$id,PDO::PARAM_INT);
+        $ps ->bindValue(1,$id1,PDO::PARAM_INT);
         $ps -> execute();
         $searchArray = $ps ->fetchAll();
         return $searchArray;
     }
 
-    public function insert_schedule($id,$title,$startday,$starttime,$endday,$endtime,$memo){
+    //スケジュールの情報を登録する
+    public function insert_schedule($g_id,$id,$title,$startday,$starttime,$endday,$endtime,$memo){
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO schedule(group_id,title,startday,starttime,endday,endtime,memo)
-                VALUES(?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO schedule(group_id,account_id,title,startday,starttime,endday,endtime,memo)
+                VALUES(?,?,?,?,?,?,?,?)";
 
         $ps = $pdo->prepare($sql);
 
-        $ps->bindValue(1,$id,PDO::PARAM_INT);
-        $ps->bindValue(2,$title,PDO::PARAM_STR);
-        $ps->bindValue(3,$startday,PDO::PARAM_INT);
-        $ps->bindValue(4,$starttime,PDO::PARAM_INT);
-        $ps->bindValue(5,$endday,PDO::PARAM_INT);
-        $ps->bindValue(6,$endtime,PDO::PARAM_INT);
-        $ps->bindValue(7,$memo,PDO::PARAM_STR);
+        $ps->bindValue(1,$g_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$id,PDO::PARAM_INT);
+        $ps->bindValue(3,$title,PDO::PARAM_STR);
+        $ps->bindValue(4,$startday,PDO::PARAM_INT);
+        $ps->bindValue(5,$starttime,PDO::PARAM_INT);
+        $ps->bindValue(6,$endday,PDO::PARAM_INT);
+        $ps->bindValue(7,$endtime,PDO::PARAM_INT);
+        $ps->bindValue(8,$memo,PDO::PARAM_STR);
 
         $ps->execute();
     }
 
+    //スケジュールを削除する
     public function schedule_delete($id1,$id2){
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM schedule WHERE schedule_id = ? AND group_id = ?";

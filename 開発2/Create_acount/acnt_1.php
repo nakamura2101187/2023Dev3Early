@@ -14,9 +14,10 @@
 <form action="?" method="post">
 メールアドレス:<input type="text" name="mail"placeholder="メールアドレスを入力してください">
 パスワード:　　<input type="password" name="pass"placeholder="パスワードを入力してください">
+ニックネーム: <input type="text" name="name"placeholder="ニックネームを入力してください"> 
 <br>
 <br>
-グループ名:<input type="text" name="name"placeholder="グループ名を入力してください">
+グループ名:<input type="text" name="g_name"placeholder="グループ名を入力してください">
 あいことば:　　<input type="text" name="aikotoba"placeholder="あいことばを入力してください">
 <br>
 

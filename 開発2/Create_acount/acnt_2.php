@@ -21,6 +21,7 @@
     ['mail' => $_POST['mail'],
      'pass' => $_POST['pass'],
      'name' => $_POST['name'],
+     'g_name' => $_POST['g_name'],
      'aikotoba' => $_POST['aikotoba']]
     ?>
     <form action = "?" method = "post">
@@ -34,9 +35,13 @@
     <?php
     echo '<h4>'. $_POST['pass'] .'</h4>';
     ?>
-    <h4>グループ名</h4>
+    <h4>ニックネーム</h4>
     <?php
     echo '<h4>'. $_POST['name'] .'</h4>';
+    ?>
+    <h4>グループ名</h4>
+    <?php
+    echo '<h4>'. $_POST['g_name'] .'</h4>';
     ?>
     <h4>あいことば</h4>
     <?php
