@@ -27,8 +27,8 @@ $schedule = $dao -> schedule_check($_SESSION['group_id']);
 <?php
 foreach($schedule as $check){
                 
-                echo 
-
+                echo
+                    $check["name"].            
                     $check["startday"].
                     $check["starttime"].
                     $check["endday"].
@@ -36,6 +36,7 @@ foreach($schedule as $check){
                     $check["title"]."<br>".
                     $check["memo"].
                     '<button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br>';
+                
                 }
                 ?><br><br>
                 <button type = "submit" formaction="schedule_addition.php">予定を追加する</button>

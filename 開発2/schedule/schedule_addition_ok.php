@@ -14,7 +14,21 @@ session_start();
 require '../DAO.php';
 $dao = new DAO();
 
-$searchArray = $dao->insert_schedule($_SESSION['group_id'],$_SESSION['id'],$_POST['title'],$_POST['startday'],$_POST['starttime'],$_POST['endday'],$_POST['endtime'],$_POST['memo']);
+$sd = preg_replace("/-/", "", $_POST["startday"]);
+$st = preg_replace("/:/", "",$_POST["starttime"]);
+$ed = preg_replace("/-/", "",$_POST["endday"]);
+$et = preg_replace("/:/", "",$_POST["endtime"]);
+
+$sd2 = intval($sd);
+$st2 = intval($st);
+$ed2 = intval($ed);
+$et2 = intval($et);
+
+echo $sd2,$st2,$ed2,$et2;
+
+$searchArray = $dao->insert_schedule($_SESSION['group_id'],$_SESSION['id'],$_POST['title'],$sd,$st,$ed,$et,$_POST['memo']);
+
+
 ?>
 
 <form action="?" method="post">

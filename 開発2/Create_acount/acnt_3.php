@@ -14,24 +14,25 @@ $dao = new DAO();
 
 $g = 0;
 
-while($g == 0){
 
-    $rand = rand(1000,9999);
-    $check_group = $dao -> check_group($rand);
-
-    if(isset($check_group["group_id"])){
-        $rand = 0;
-    }else{
-        $g = $g+1;
-    }
-
-}
 
 $user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"],$_SESSION["user"]["name"]);
-$group = $dao ->ginsertUser($rand,$_SESSION["user"]["aikotoba"],$_SESSION["user"]["g_name"]);
-
 
 if(isset($_SESSION["user"]["name"]) && isset($_SESSION["user"]["aikotoba"])){
+    
+    while($g == 0){
+
+        $rand = rand(1000,9999);
+        $check_group = $dao -> check_group($rand);
+    
+        if(isset($check_group["group_id"])){
+            $rand = 0;
+        }else{
+            $g = $g+1;
+            $group = $dao ->ginsertUser($rand,$_SESSION["user"]["aikotoba"],$_SESSION["user"]["g_name"]);
+        }
+    
+    }
 
     echo 'グループの登録が完了しました！！<br>';
     echo $rand;

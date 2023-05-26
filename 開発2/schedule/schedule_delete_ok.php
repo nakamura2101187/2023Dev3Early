@@ -26,7 +26,7 @@ $delete = $dao -> schedule_delete($_SESSION["delete_id"],$_SESSION['group_id']);
 
     <p>予定を削除しました</p>
 
-    <button type = "submit" formaction="../Calendar/calendar.php">カレンダー画面へ戻る</button>
+    <button type = "submit" formaction="schedule_check.php">スケジュール確認画面へと戻る</button>
 
 </body>
 <script>
