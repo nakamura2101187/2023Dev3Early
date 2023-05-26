@@ -1,0 +1,214 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- ホスト: 127.0.0.1
+-- 生成日時: 2023-05-26 06:39:28
+-- サーバのバージョン： 10.4.24-MariaDB
+-- PHP のバージョン: 8.1.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- データベース: `kaihatu2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `account`
+--
+
+CREATE TABLE `account` (
+  `account_id` int(11) NOT NULL,
+  `mail` varchar(191) NOT NULL,
+  `pass` varchar(191) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `account`
+--
+
+INSERT INTO `account` (`account_id`, `mail`, `pass`, `name`) VALUES
+(1, 'c@c', 'c', 'cc君'),
+(2, 'a@a', 'a', 'AA様'),
+(3, 'b@b', 'b', 'BB先輩'),
+(4, 'b@b', 'b', 'BB先輩'),
+(5, 'o', 'o', 'o'),
+(6, 'o', 'o', 'o'),
+(7, 'o', 'o', 'o'),
+(8, 'o', 'o', 'o'),
+(9, 'o', 'o', 'o');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `affiliation`
+--
+
+CREATE TABLE `affiliation` (
+  `affiliation_id` int(11) NOT NULL,
+  `account_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `affiliation`
+--
+
+INSERT INTO `affiliation` (`affiliation_id`, `account_id`, `group_id`) VALUES
+(1, 9, 3417),
+(2, 9, 3417),
+(3, 9, 3417),
+(4, 9, 3417),
+(5, 9, 3417),
+(6, 9, 3417),
+(7, 9, 3417),
+(8, 9, 3417);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `group`
+--
+
+CREATE TABLE `group` (
+  `group_id` int(11) NOT NULL,
+  `word` varchar(20) NOT NULL,
+  `group_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `group`
+--
+
+INSERT INTO `group` (`group_id`, `word`, `group_name`) VALUES
+(3417, 'o', 'o'),
+(3424, 'CC最高！', 'CC同好会'),
+(5454, '', '');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `holiday`
+--
+
+CREATE TABLE `holiday` (
+  `holiday_id` int(11) NOT NULL,
+  `holiday_name` varchar(20) NOT NULL,
+  `date` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `schedule`
+--
+
+CREATE TABLE `schedule` (
+  `schedule_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  `account_id` int(11) NOT NULL,
+  `startday` date NOT NULL,
+  `starttime` time NOT NULL,
+  `endday` date NOT NULL,
+  `endtime` time NOT NULL,
+  `title` varchar(20) NOT NULL,
+  `memo` varchar(191) DEFAULT NULL,
+  `mastar` int(1) DEFAULT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `schedule`
+--
+
+INSERT INTO `schedule` (`schedule_id`, `group_id`, `account_id`, `startday`, `starttime`, `endday`, `endtime`, `title`, `memo`) VALUES
+(30, 3417, 9, '2023-05-30', '14:37:00', '2023-05-31', '14:37:00', 'ぎゃああああぁぁぁぁぁぁｌ', 'a');
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
+-- テーブルのインデックス `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`account_id`);
+
+--
+-- テーブルのインデックス `affiliation`
+--
+ALTER TABLE `affiliation`
+  ADD PRIMARY KEY (`affiliation_id`),
+  ADD KEY `account_id` (`account_id`),
+  ADD KEY `group_id` (`group_id`);
+
+--
+-- テーブルのインデックス `group`
+--
+ALTER TABLE `group`
+  ADD PRIMARY KEY (`group_id`);
+
+--
+-- テーブルのインデックス `holiday`
+--
+ALTER TABLE `holiday`
+  ADD PRIMARY KEY (`holiday_id`);
+
+--
+-- テーブルのインデックス `schedule`
+--
+ALTER TABLE `schedule`
+  ADD PRIMARY KEY (`schedule_id`),
+  ADD KEY `group_id` (`group_id`),
+  ADD KEY `account_id` (`account_id`);
+
+--
+-- ダンプしたテーブルの AUTO_INCREMENT
+--
+
+--
+-- テーブルの AUTO_INCREMENT `account`
+--
+ALTER TABLE `account`
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- テーブルの AUTO_INCREMENT `affiliation`
+--
+ALTER TABLE `affiliation`
+  MODIFY `affiliation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- テーブルの AUTO_INCREMENT `holiday`
+--
+ALTER TABLE `holiday`
+  MODIFY `holiday_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- テーブルの AUTO_INCREMENT `schedule`
+--
+ALTER TABLE `schedule`
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- ダンプしたテーブルの制約
+--
+
+--
+-- テーブルの制約 `affiliation`
+--
+ALTER TABLE `affiliation`
+  ADD CONSTRAINT `affiliation_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`),
+  ADD CONSTRAINT `affiliation_ibfk_2` FOREIGN KEY (`group_id`) REFERENCES `group` (`group_id`);
+
+--
+-- テーブルの制約 `schedule`
+--
+ALTER TABLE `schedule`
+  ADD CONSTRAINT `schedule_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `group` (`group_id`),
+  ADD CONSTRAINT `schedule_ibfk_2` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`);
+COMMIT;
