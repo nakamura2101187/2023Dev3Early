@@ -32,6 +32,7 @@ if(isset($mastar_check["mastar"])){
     <button type = "submit" formaction="schedule_check.php">戻る</button>';
     }else{
         echo '<p>この予定はマスタスケジュールなので作成者以外変更出来ません！</p>';
+        echo '<button type = "submit" formaction="schedule_check.php">戻る</button>';
     }
 }else{
     echo '<p>本当に予定を削除しますか？</p>

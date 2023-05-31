@@ -106,13 +106,17 @@ class DAO{
         return $searchArray;
     }
 
+
     //スケジュールを確認する為にグループで登録したスケジュールを全権表示する
-    public function schedule_check($id){
+    public function schedule_check($id1,$id2,$a){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM schedule INNER JOIN account ON account.account_id = schedule.account_id
-        WHERE group_id = ?";
+        WHERE CASE WHEN ? = 1 THEN schedule_id = ? ELSE group_id = ? END";
         $ps = $pdo -> prepare($sql);
-        $ps ->bindValue(1,$id,PDO::PARAM_INT);
+        $ps ->bindValue(1,$a,PDO::PARAM_INT);
+        $ps ->bindValue(2,$id2,PDO::PARAM_INT);
+        $ps ->bindValue(3,$id1,PDO::PARAM_INT);
+
         $ps -> execute();
         $searchArray = $ps ->fetchAll();
         return $searchArray;

@@ -52,10 +52,10 @@ $weeks = [];
 $week = '';
 
 
-
 // 第１週目：空のセルを追加
 // 例）１日が火曜日だった場合、日・月曜日の２つ分の空セルを追加する
 $week .= str_repeat('<td></td>', $youbi);
+
 
 $schedule = $dao->schedule_hyouji($_SESSION['group_id']);
  
@@ -72,7 +72,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     }
     foreach($schedule as $row){
         if($row["startday"] <= $date && $row["endday"] >= $date){
-            $week .= "<br>☺";
+            $week .= '<br><button type = "submit" formaction="../schedule/schedule_check.php" name = schedule value ='.$row["schedule_id"].'>'.$row["title"].'</button>';
         }
     }
     
