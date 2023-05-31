@@ -7,16 +7,21 @@
 
     <title>Document</title>    
 </head>
+<body>
 
 <?php
+
+//セッションの開始
 session_start();
-if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
-    header('Location: ../3_Mypage/mypage.php');
+
+//グループIDと、あいことばがセッションにあれば、カレンダー画面へと遷移
+if(isset($_SESSION['group_id']) == true && isset($_SESSION['aikotoba']) == true){
+    header('Location: ../Calendar/calendar.php');
 }
+
 ?>
-<div class="tema">
-<form action="../Calendar/calendar" method="post">
-    <article>
+
+<form action="g_login_check.php" method="post">
 
     <h2 class="test">グループIDと合言葉を入力してください</h2><br>
     <input type="text" name="group_id" placeholder="グループID"><br><br>
@@ -27,8 +32,6 @@ if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
     <a href="../Create_acount/acnt_1.php">アカウントを新規登録</a>
     <br>
     <button type = "submit">ログイン</button>
-</div>
-</div>
 </form>
 </body>
 <script>
