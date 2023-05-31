@@ -26,14 +26,14 @@ $schedule = $dao -> schedule_check($_SESSION['group_id'],$_POST['schedule'],1);
 
 <?php 
 if(isset($_POST['schedule'])){
-<p>開始日時</p>
-    '<input type="date" name="startday" value='.$schedule["startday"].'><input type="time" name="starttime"value='.$schedule["startday"].><br>
+'<p>開始日時</p>
+    <input type="date" name="startday" value='.$schedule["startday"].'><input type="time" name="starttime"value='.$schedule["startday"].'><br>
 <p>終了日時</p>    
     <input type="date" name="endday"><input type="time" name="endtime"><br>
 <p>メモ
     <textarea name="memo"></textarea>
 <p>入力する予定をマスタースケジュールにしますか？</p>
-}
+}';
 ?>
     <input type="checkbox" value="1" name="mastar" checked><br>
 
