@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equir="content-type" charset = "UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/acnt_1.css">
+<style>
+    body{
+       text-align: center;
+       background-color: 	#F0E68C;
+    } 
+    h1 {
+    text-align:center;
+    font-size : 24px; 
+    line-height : 5; 
+}
+    h2 {
+    text-align:center;
+    font-size : 24px; 
+    line-height : 5; 
+}
+button {
+display: block;
+margin: auto;
+border-radius: 10px;
+background-color:		#C0C0C0;
+}
+input{
+  width: 200x;
+  border: 2px solid black;
+  background-color:	#C0C0C0;
+
+}
+</style>
+<title>新規登録画面</title>
+</head>
+
+<body class="tema">
+
+<h1>新規登録画面</h1>
+<div class="mail">
+<form action="?" method="post">
+<label>メールアドレス</label><br>
+<input type="text" name="mail"placeholder="メールアドレスを入力してください"><br>
+<label>パスワード</label><br>
+<input type="password" name="pass"placeholder="パスワードを入力してください"><br>
+<br>
+<h2>グループを作成する場合はこちらも入力してください</h2><br> 
+<label>グループ名</label><br>
+<input type="text" name="name"placeholder="グループ名を入力してください"><br>
+<label>あいことば</label><br>
+<input type="text" name="aikotoba"placeholder="あいことばを入力してください"><br>
+<br>
+<button type = "submit" formaction="../Login/login.php">ログイン画面へ戻る</button><br>
+<button type = "submit" formaction="../Create_acount/acnt_2.php">登録する</button><br>
+</form>
+</div>
+</body>
+</html>
