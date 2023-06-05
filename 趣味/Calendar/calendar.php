@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+require '../DAO.php';
+$dao = new DAO();
+
 // タイムゾーンを設定
 date_default_timezone_set('Asia/Tokyo');
 
@@ -46,12 +51,16 @@ $youbi = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestam
 $weeks = [];
 $week = '';
 
+
 // 第１週目：空のセルを追加
 // 例）１日が火曜日だった場合、日・月曜日の２つ分の空セルを追加する
 $week .= str_repeat('<td></td>', $youbi);
 
-for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 
+$schedule = $dao->schedule_hyouji($_SESSION['group_id']);
+ 
+echo "<br><br>";
+for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     // 2021-06-3
     $date = $ym . '-' . $day;
 
@@ -61,6 +70,12 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     } else {
         $week .= '<td>' . $day;
     }
+    foreach($schedule as $row){
+        if($row["startday"] <= $date && $row["endday"] >= $date){
+            $week .= '<br><button type = "submit" formaction="../schedule/schedule_check.php" name = schedule value ='.$row["schedule_id"].'>'.$row["title"].'</button>';
+        }
+    }
+    
     $week .= '</td>';
 
     // 週終わり、または、月終わりの場合
@@ -93,9 +108,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             font-family: 'Noto Sans JP', sans-serif;
             margin-top: 80px;
         }
-        .team{
-            background-image:url(img/haikei.jpg);
-        }
         a {
             text-decoration: none;
         }
@@ -115,33 +127,14 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
         th:nth-of-type(7), td:nth-of-type(7) {
             color: blue;
         }
-        .button{
-            text-align: right;
-
-        }
-        .header{
-            text-align:center
-        }
-        .mb-5{
-            color: #40e0d0;
-        }
-        .container table{
-            background-color: #40e0d0;
-        }
-        .sakusei{
-            text-align: center;
-        }
 </style>
 </head>
-<body class="team">
-    <div class="button">
-        <button>ログアウト</button>
-    </div>
-<div class="header">
-        <div class = "logo">
-            <img src="img/logo.png" width="300" alt="TimeThree">
-        </div>
-</div>
+<body>
+<form action="?" method="post"> 
+<button type = "submit" formaction="../logout.php">ログアウト</button><br>
+<?php 
+    echo $_SESSION["group_name"];
+    ?>
     <div class="container">
         <h3 class="mb-5"><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
         <table class="table table-bordered">
@@ -160,9 +153,11 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
                 }
             ?>
         </table>
+
+        <button type = "submit" formaction="../schedule/schedule_check.php">予定を確認する</button>
+        <button type = "submit" formaction="../schedule/schedule_addition.php">予定を追加する</button>
+
     </div>
-    <div class="sakusei">
-        <button>作成</button>
-    </div>
+    </form>
 </body>
-</html>
+<script>

@@ -16,13 +16,12 @@ if(isset($_SESSION["user"]["name"]) && isset($_SESSION["user"]["aikotoba"])){
     
     $g_id = $dao ->g_id($_SESSION["user"]["aikotoba"],$_SESSION["user"]["name"]);
 
-    echo 'グループの登録が完了しました！！<br>
-    グループID：';
-
+    echo 'グループの登録が完了しました！！<br>';
+    echo $g_id["group_id"];
 }else{
 
     echo "アカウントの登録が完了しました！グループID：";
-    echo $g_id[0]["group_id"];
+    
 
 }
 

@@ -39,13 +39,38 @@ class DAO{
 
         $ps = $pdo->prepare($sql);
 
-        $ps->bindValue(1,$id,PDO::PARAM_STR);
+        $ps->bindValue(1,$id,PDO::PARAM_INT);
         $ps->bindValue(2,$aikotoba,PDO::PARAM_STR);
         $ps->bindValue(3,$name,PDO::PARAM_STR);
 
         $ps->execute();
     }
 
+
+    public function shokai_check($a_id,$g_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM affiliation WHERE account_id = ? AND group_id = ?";
+        $ps = $pdo ->prepare($sql);
+        $ps -> bindValue(1,$a_id,PDO::PARAM_STR);
+        $ps -> bindValue(2,$g_id,PDO::PARAM_STR);
+        $ps -> execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+    
+
+    public function shokai_login($id1,$id2){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO affiliation (account_id,group_id)
+                VALUES(?,?)";
+
+        $ps = $pdo->prepare($sql);
+
+        $ps->bindValue(1,$id1,PDO::PARAM_INT);
+        $ps->bindValue(2,$id2,PDO::PARAM_INT);
+
+        $ps->execute();
+    }
 
     //ログイン時にメールアドレスとパスワードが合っているかを判断する
     public function loginUser($mail,$pass){
@@ -71,22 +96,37 @@ class DAO{
         return $searchArray;
     }
 
-    //スケジュールを確認する為にグループで登録したスケジュールを全権表示する
-    public function schedule_check($id){
+    public function schedule_hyouji($id){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM schedule WHERE group_id = ?";
         $ps = $pdo -> prepare($sql);
-        $ps ->bindValue(1,$id1,PDO::PARAM_INT);
+        $ps ->bindValue(1,$id,PDO::PARAM_INT);
+        $ps -> execute();
+        $searchArray = $ps ->fetchAll();
+        return $searchArray;
+    }
+
+
+    //スケジュールを確認する為にグループで登録したスケジュールを全権表示する
+    public function schedule_check($id1,$id2,$a){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM schedule INNER JOIN account ON account.account_id = schedule.account_id
+        WHERE CASE WHEN ? = 1 THEN schedule_id = ? ELSE group_id = ? END";
+        $ps = $pdo -> prepare($sql);
+        $ps ->bindValue(1,$a,PDO::PARAM_INT);
+        $ps ->bindValue(2,$id2,PDO::PARAM_INT);
+        $ps ->bindValue(3,$id1,PDO::PARAM_INT);
+
         $ps -> execute();
         $searchArray = $ps ->fetchAll();
         return $searchArray;
     }
 
     //スケジュールの情報を登録する
-    public function insert_schedule($g_id,$id,$title,$startday,$starttime,$endday,$endtime,$memo){
+    public function insert_schedule($g_id,$id,$title,$startday,$starttime,$endday,$endtime,$memo,$mastar){
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO schedule(group_id,account_id,title,startday,starttime,endday,endtime,memo)
-                VALUES(?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO schedule(group_id,account_id,title,startday,starttime,endday,endtime,memo,mastar)
+                VALUES(?,?,?,?,?,?,?,?,?)";
 
         $ps = $pdo->prepare($sql);
 
@@ -94,12 +134,27 @@ class DAO{
         $ps->bindValue(2,$id,PDO::PARAM_INT);
         $ps->bindValue(3,$title,PDO::PARAM_STR);
         $ps->bindValue(4,$startday,PDO::PARAM_INT);
-        $ps->bindValue(5,$starttime,PDO::PARAM_INT);
+        $starttime = substr($starttime, 0, 2) . ':' . substr($starttime, 2, 2) . ':00';
+        $ps->bindValue(5, $starttime, PDO::PARAM_STR);
         $ps->bindValue(6,$endday,PDO::PARAM_INT);
-        $ps->bindValue(7,$endtime,PDO::PARAM_INT);
+        $endtime = substr($endtime, 0, 2) . ':' . substr($endtime, 2, 2) . ':00';
+        $ps->bindValue(7, $endtime, PDO::PARAM_STR);
         $ps->bindValue(8,$memo,PDO::PARAM_STR);
+        $ps->bindValue(9,$mastar,PDO::PARAM_INT);
 
         $ps->execute();
+    }
+
+    public function mastar_check($id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM schedule WHERE schedule_id = ?";
+        $ps = $pdo ->prepare($sql);
+
+        $ps->bindValue(1,$id,PDO::PARAM_INT);
+
+        $ps -> execute();
+        $searchArray = $ps ->fetchAll();
+        return $searchArray;
     }
 
     //スケジュールを削除する

@@ -9,15 +9,16 @@
 </head>
 
 <?php
+//セッションを開始する
 session_start();
+//セッションの情報が登録されている場合、グループログイン画面へと遷移する
 if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
-    header('Location: ../3_Mypage/mypage.php');
+    header('Location: g_login.php');
 }
-?>
 
+?>
 <form action="login_check.php" method="post">
     <br><br><br><br>
-    <article>
 
     <h2 class="test">メールアドレスとパスワードを入力してください</h2><br>
     <input type="text" name="mail" placeholder="メールアドレス"><br><br>
