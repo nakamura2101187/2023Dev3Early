@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+ <meta name="format-detection"content="telephone=no">
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+ <style type="text/css">*{margin:0;padding:0; border:0;}</style> 
 <meta http-equir="content-type" charset = "UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../css/acnt_1.css">
+</head>
 <style>
+  @media (min-width: 0px) and (max-width:768px) {
+				.div1{
+					width: 100px;
+					height: 100px;
+					background-color: red;
+				}
+			}
+			
+			@media (min-width: 768px) and (max-width:992px){
+				.div1{
+					width: 300px;
+					height: 300px;
+					background-color: blue;
+				}
+			}
+			
+			@media (min-width: 992px) {
+				.div1{
+					width: 500px;
+					height: 500px;
+					background-color: aqua;
+				}
+			}
     body{
        text-align: center;
        background-color: 	#F0E68C;
     } 
     h1 {
     text-align:center;
-    font-size : 24px; 
+    font-size : 15px; 
     line-height : 5; 
 }
     h2 {
     text-align:center;
-    font-size : 24px; 
+    font-size : 15px; 
     line-height : 5; 
 }
 button {
+padding: 5px 10px; 
 display: block;
 margin: auto;
-border-radius: 10px;
+border-radius: 15px;
 background-color:		#C0C0C0;
 }
 input{
-  width: 200x;
+  padding: 5px 10px;
+  width: 600x;
   border: 2px solid black;
   background-color:	#C0C0C0;
 
@@ -41,15 +74,17 @@ input{
 <div class="mail">
 <form action="?" method="post">
 <label>メールアドレス</label><br>
-<input type="text" name="mail"placeholder="メールアドレスを入力してください"><br>
+<input type="text" name="mail"placeholder="mailaddress"><br>
 <label>パスワード</label><br>
-<input type="password" name="pass"placeholder="パスワードを入力してください"><br>
+<input type="password" name="pass"placeholder="password"><br>
+<label>ニックネーム</label><br>
+<input type="text" name="nickname"placeholder="ニックネーム"><br>
 <br>
 <h2>グループを作成する場合はこちらも入力してください</h2><br> 
 <label>グループ名</label><br>
-<input type="text" name="name"placeholder="グループ名を入力してください"><br>
+<input type="text" name="name"placeholder="グループ名"><br>
 <label>あいことば</label><br>
-<input type="text" name="aikotoba"placeholder="あいことばを入力してください"><br>
+<input type="text" name="aikotoba"placeholder="あいことば"><br>
 <br>
 <button type = "submit" formaction="../Login/login.php">ログイン画面へ戻る</button><br>
 <button type = "submit" formaction="../Create_acount/acnt_2.php">登録する</button><br>
