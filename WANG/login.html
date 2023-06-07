@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>    
+</head>
+<style>
+  @media (min-width: 0px) and (max-width:768px) {
+				.div1{
+					width: 100px;
+					height: 100px;
+					background-color: red;
+				}
+			}
+			
+			@media (min-width: 768px) and (max-width:992px){
+				.div1{
+					width: 300px;
+					height: 300px;
+					background-color: blue;
+				}
+			}
+			
+			@media (min-width: 992px) {
+				.div1{
+					width: 500px;
+					height: 500px;
+					background-color: aqua;
+				}
+			} 
+            body{
+       text-align: center;
+       background-color: 	#F0E68C;
+    } 
+    h1 {
+    text-align:center;
+    font-size : 20px; 
+    line-height : 5; 
+}
+    h2 {
+    text-align:center;
+    font-size : 20px; 
+    line-height : 5; 
+}
+button {
+padding: 5px 10px; 
+display: block;
+margin: auto;
+border-radius: 15px;
+background-color:		#C0C0C0;
+}
+input{
+  padding: 5px 10px;
+  width: 600x;
+  border: 2px solid black;
+  background-color:	#C0C0C0;
+
+} 
+</style>
+
+<?php
+//セッションを開始する
+session_start();
+//セッションの情報が登録されている場合、グループログイン画面へと遷移する
+if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
+    header('Location: g_login.php');
+}
+
+?>
+<form action="login_check.php" method="post">
+    <br><br><br><br>
+
+    <h2 class="test">ユーザーログイン</h2><br>
+    <input type="text" name="mail" placeholder="mailaddress"><br><br>
+    <input type="password" name="pass" placeholder="password"><br>
+
+    <br>
+    <p>アカウント作成はこちら</p>
+    <a href="../Create_acount/acnt_1.php">アカウントを新規登録</a>
+    
+    <br>
+    <button type = "submit">ログイン</button>
+</div>
+</form>
+</body>
+<script>
