@@ -1,54 +1,63 @@
+@@ -1,42 +1,47 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>新規登録確認情報画面</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <style>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
     .tema{
         background-image: url(img/haikei2.jpg);
     }
 </style>
-        
+<body class="tema">
+    <title>新規登録完了画面</title>
 </head>
-    <body class="tema">
-    <?php
-    require '../DAO.php';
+<?php
+session_start();
 
-    $dao = new DAO();
-    session_start();
+require '../DAO.php';
+$dao = new DAO();
 
- //　ユーザ情報をセッション関数に登録　//
-    $_SESSION['user'] =
-    ['mail' => $_POST['mail'],
-     'pass' => $_POST['pass'],
-     'name' => $_POST['name'],
-     'aikotoba' => $_POST['aikotoba']]
-    ?>
-    <form action = "?" method = "post">
-        
-    <h3>以下の内容で登録を完了しますか？</h3>
-    <h4>メールアドレス</h4>
-    <?php
-    echo '<h4>'. $_POST['mail'] .'</h4>';
-    ?>
-    <h4>パスワード</h4>
-    <?php
-    echo '<h4>'. $_POST['pass'] .'</h4>';
-    ?>
-    <h4>グループ名</h4>
-    <?php
-    echo '<h4>'. $_POST['name'] .'</h4>';
-    ?>
-    <h4>あいことば</h4>
-    <?php
-    echo '<h4>'. $_POST['aikotoba'] .'</h4>';
-    ?>
+$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"]);
+$group = $dao ->ginsertUser($_SESSION["user"]["aikotoba"],$_SESSION["user"]["name"]);
+$g = 0;
 
-    <button type='submit' formaction="acnt_1.php">修正する</button>
-    <button type='submit' formaction="acnt_3.php">登録する</button>
 
-    </body>
-</html>
+
+$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"],$_SESSION["user"]["name"]);
+
+if(isset($_SESSION["user"]["name"]) && isset($_SESSION["user"]["aikotoba"])){
+if(isset($_SESSION["user"]["g_name"]) && isset($_SESSION["user"]["aikotoba"])){
+    
+    $g_id = $dao ->g_id($_SESSION["user"]["aikotoba"],$_SESSION["user"]["name"]);
+    while($g == 0){
+
+    echo 'グループの登録が完了しました！！<br>';
+        $rand = rand(1000,9999);
+        $check_group = $dao -> check_group($rand);
+    
+        if(!isset($check_group["group_id"])){    
+            $group = $dao ->ginsertUser($rand,$_SESSION["user"]["aikotoba"],$_SESSION["user"]["g_name"]);
+            $g = $g+1;
+        }
+    
+    }
+
+    echo 'グループの登録が完了しました！！<br>';
+    echo $rand;
+
+}else{
+
+    echo "アカウントの登録が完了しました！";
+
+}
+
+session_destroy();
+?>
+<form action="?" method="post"> 
+    <button type = "submit" formaction="../Login/test.php">登録する</button>
+</form>
+</body>
+    <button type = "submit" formaction="../Login/login.php">登録する</button>
+</form>

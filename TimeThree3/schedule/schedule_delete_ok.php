@@ -29,4 +29,4 @@ $delete = $dao -> schedule_delete($_SESSION["delete_id"],$_SESSION['group_id']);
     <button type = "submit" formaction="schedule_check.php">スケジュール確認画面へと戻る</button>
 
 </body>
-<script>
+

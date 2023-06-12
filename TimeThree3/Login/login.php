@@ -28,6 +28,9 @@ if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
     <p>アカウントを作成していない方</p>
     <a href="../Create_acount/acnt_1.php">アカウントを新規登録</a>
     
+    <p>パスワードを忘れた方はこちら</p>
+    <a href="../Mail/mailform.php">登録情報を確認する</a>
+    <br>
     <br>
     <button type = "submit">ログイン</button>
 </div>
