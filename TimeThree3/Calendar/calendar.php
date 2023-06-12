@@ -122,7 +122,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             text-align: center;
         }
         td {
-@ -131,133 +131,100 @@
         th:nth-of-type(7), td:nth-of-type(7) {
             color: blue;
         }
