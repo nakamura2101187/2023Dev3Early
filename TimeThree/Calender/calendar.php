@@ -174,6 +174,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
         
         /*6/12ここから追加*/
         .button_solid017 button {
+            float:right;
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -196,6 +197,42 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
   transition: all 0.2s;
 }
 .button_solid017 button:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #543618;
+    border-right: 3px solid #543618;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button_solid018 button {
+            float:left;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 240px;
+    padding: 10px 25px;
+    color: #543618;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #eeee;
+    border-radius: 50px;
+    border: 0.2rem solid #40e0d0;
+    box-shadow: 0.2rem 0.2rem 0px 0.1rem #cccccc;
+}
+.button_solid018 button:hover {
+  transform: translate3d(0.2rem, 0.2rem, 0);
+  box-shadow: none;
+  opacity: 1;
+  transition: all 0.2s;
+}
+.button_solid018 button:after {
     content: '';
     width: 5px;
     height: 5px;
@@ -246,10 +283,10 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             ?>
         </table>
         
-        <div class="button_solid017">/*6/12追加*/
+        <div class="button_solid017">
         <button type = "submit" formaction="../schedule/schedule_check.php">予定を確認する</button>
         </div>
-        <div class="button_solid017">/*6/12追加*/
+        <div class="button_solid018">
         <button type = "submit" formaction="../schedule/schedule_addition.php">予定を追加する</button>
         </div>
         
