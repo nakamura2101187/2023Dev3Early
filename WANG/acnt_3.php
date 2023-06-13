@@ -19,11 +19,12 @@
        background-color: 	#F0E68C;
     } 
     button {
-padding: 5px 10px; 
-display: block;
-margin: auto;
-border-radius: 15px;
-background-color:		#C0C0C0;
+    font-family: "MS 明朝";       
+    padding: 5px 10px; 
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    background-color:		#C0C0C0;
 }
 </style>
 <body class="tema">
