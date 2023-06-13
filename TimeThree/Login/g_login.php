@@ -34,4 +34,4 @@ if(isset($_SESSION['group_id']) == true && isset($_SESSION['aikotoba']) == true)
     <button type = "submit">ログイン</button>
 </form>
 </body>
-<script>
+
