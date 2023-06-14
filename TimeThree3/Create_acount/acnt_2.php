@@ -81,9 +81,8 @@ $dao = new DAO();
     $_SESSION['user'] =
     ['mail' => $_POST['mail'],
      'pass' => $_POST['pass'],
-     'name' => $_POST['name'],];
      'name' => $_POST['name'],
-     'aikotoba' => $_POST['aikotoba']]
+];
     ?>
         
     

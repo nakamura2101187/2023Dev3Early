@@ -13,12 +13,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <style>
-<<<<<<< HEAD
     .tema{
         background-image: url(../img/haikei2.jpg);
     }
-</style>
-=======
     body{
        text-align: center;
        background-color: 	#F0E68C;
@@ -74,17 +71,9 @@ label{
 </div>
 <div class="container mt-1">
 <label for="nickname" class="from-label">ニックネーム</label><br>
-<input type="text" class="from-control" name="nickname"placeholder="ニックネーム">
+<input type="text" class="from-control" name="name"placeholder="ニックネーム">
 </div>
-<h2>グループを作成する場合はこちらも入力してください</h2>
-<div class="container mt-1">
-<label for="groupname" class="from-label">グループ名</label><br>
-<input type="text" class="from-control" name="name"placeholder="グループ名">
-</div>
-<div class="container mt-1">
-<label for="word" class="from-label">あいことば</label><br>
-<input type="text" class="from-control" name="aikotoba"placeholder="あいことば">
-</div><br>
+
 <button type = "submit" formaction="../Login/login.php">ログイン画面へ戻る</button><br>
 <button type = "submit" formaction="../Create_acount/acnt_2.php">登録する</button><br>
 </form>

@@ -37,28 +37,13 @@ require '../DAO.php';
 $dao = new DAO();
 
 $user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"]);
-$group = $dao ->ginsertUser($_SESSION["user"]["aikotoba"],$_SESSION["user"]["name"]);
-
-
-if(isset($_SESSION["user"]["name"]) && isset($_SESSION["user"]["aikotoba"])){
-    
-    $g_id = $dao ->g_id($_SESSION["user"]["aikotoba"],$_SESSION["user"]["name"]);
-
-    echo 'グループの登録が完了しました！！<br>';
-    
-
-}else{
 
     echo "アカウントの登録が完了しました！";
 
-}
+    foreach($_SESSION['user'] as $row){
 
-<<<<<<< HEAD
-foreach($_SESSION['user'] as $row){
-    unset($row);
-}
-=======
->>>>>>> 5bf2a9697024c7f092581bd035c74963d8f27810
+        unset($row);
+    }
 ?>
 <form action="?" method="post"> 
     <button type = "submit" formaction="../Login/test.php">登録する</button>
