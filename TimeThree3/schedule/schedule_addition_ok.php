@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>    
@@ -27,10 +26,20 @@ $et2 = intval($et);
 
 echo $sd2,$st2,$ed2,$et2;
 
-$searchArray = $dao->insert_schedule($_SESSION['group_id'],$_SESSION['id'],$_POST['title'],$sd,$st,$ed,$et,$_POST['memo']);
 echo "<br>".$_POST['mastar'];
 
 $searchArray = $dao->insert_schedule($_SESSION['group_id'],$_SESSION['id'],$_POST['title'],$sd,$st,$ed,$et,$_POST['memo'],$_POST['mastar']);
 
 ?>
 
+<form action="?" method="post">
+
+
+
+<p>予定を追加しました</p>
+
+    <button type = "submit" formaction="../Calendar/calendar.php">カレンダー画面へ戻る</button>
+
+</form>
+</body>
+<script>

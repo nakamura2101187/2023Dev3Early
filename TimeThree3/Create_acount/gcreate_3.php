@@ -36,7 +36,10 @@ $g = 0;
     echo $_SESSION["group"]["g_name"].'のグループID　:　';
     echo $rand;
 
-//session_destroy();
+    foreach($_SESSION['group'] as $row){
+
+        unset($row);
+    }
 ?>
 <form action="?" method="post"> 
     <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>

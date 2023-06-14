@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="../css/acnt_1.css">
 <style>
     .tema{
-        background-image: url(img/haikei2.jpg);
+        background-image: url(../img/haikei2.jpg);
     }
 </style>
 

@@ -272,7 +272,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
         
 
     </div>
-        <br><br>
 
 
     </form>

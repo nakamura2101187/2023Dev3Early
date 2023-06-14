@@ -24,7 +24,9 @@ $user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"],$_
     echo "アカウントの登録が完了しました！";
 
 
-session_destroy();
+foreach($_SESSION['user'] as $row){
+    unset($row);
+}
 ?>
 <form action="?" method="post"> 
     <button type = "submit" formaction="../Login/login.php">ログイン画面に戻る</button>

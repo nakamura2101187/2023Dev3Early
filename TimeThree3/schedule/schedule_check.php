@@ -18,7 +18,6 @@ $a = 0;
 
 session_start();
 
-$schedule = $dao -> schedule_check($_SESSION['group_id']);
 if(isset($_POST['schedule'])){
     $a = $a + $_POST['schedule'];
     $schedule = $dao -> schedule_check($_SESSION['group_id'],$a,1);
@@ -36,13 +35,6 @@ if(isset($_POST['schedule'])){
 
 <?php
 foreach($schedule as $check){
-                
-                echo
-                    $check["name"].            
-                    $check["startday"].
-                    $check["starttime"].
-                    $check["endday"].
-                    $check["endtime"]."<br>".
 
     $mastar = $dao->mastar_check($check["schedule_id"]);
     
@@ -59,8 +51,6 @@ foreach($schedule as $check){
                     $check["endday"]."　".
                     $check["endtime"]."　"."<br>".
                     $check["title"]."<br>".
-                    $check["memo"].
-                    '<button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br>';
                     $check["memo"];
                     
 
@@ -79,7 +69,6 @@ foreach($schedule as $check){
                         }
                     }
                 
-                }
                 ?><br><br>
                 
                 
@@ -87,3 +76,4 @@ foreach($schedule as $check){
                 
             </form>
         </body>
+<script>
