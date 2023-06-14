@@ -41,6 +41,7 @@ input{
   font-family: "MS 明朝";
   padding: 5px 10px;
   width: 600x;
+  border-radius: 10px;
   border: 2px solid black;
   background-color:	#C0C0C0;
 

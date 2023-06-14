@@ -29,4 +29,3 @@ if(isset($_SESSION['mail'])==false || isset($_SESSION['pass'])==false || isset($
     <button type = "submit">ログイン</button>
 </form>
 </body>
-<script>

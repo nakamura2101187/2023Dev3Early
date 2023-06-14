@@ -21,11 +21,18 @@ echo $_SESSION["delete_id"];
 ?>
 
 
+
 <form action="?" method="post">
     <p>本当に予定を削除しますか？</p>
+<?php    
+
+    echo '<p>本当に予定を削除しますか？</p>
     <button type = "submit" formaction="schedule_delete_ok.php">削除する</button>
     <button type = "submit" formaction="schedule_check.php">戻る</button>
+    <button type = "submit" formaction="schedule_check.php">戻る</button>';
+
+
+?>
 
 </form>
 </body>
-<script>
