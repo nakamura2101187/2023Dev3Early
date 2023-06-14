@@ -13,14 +13,11 @@
 <?php
 
 session_start();
-?>
+
 require '../DAO.php';
 $dao = new DAO();
 if(isset($_POST['schedule'])){
 $schedule = $dao -> schedule_check($_SESSION['group_id'],$_POST['schedule'],1);
-
-
-
 }
 
 if(isset($schedule[0]["schedule_id"])){
@@ -31,12 +28,7 @@ if(isset($schedule[0]["schedule_id"])){
 ?>
 <form action="?" method="post">
 
-
-<input type="text" name="title" placeholder="タイトル">
-
-<p>開始日時</p>
-    <input type="date" name="startday"><input type="time" name="starttime"><br>
-<p>終了日時</p>    
+  
 <?php 
 if(isset($_POST['schedule'])){
 
@@ -55,7 +47,7 @@ if(isset($_POST['schedule'])){
     <input type="date" name="startday"><input type="time" name="starttime"value=><br>
     <p>終了日時</p>    
     <input type="date" name="endday"><input type="time" name="endtime"><br>
-<p>メモ
+
     <p>メモ
     <textarea name="memo"></textarea>
     <p>入力する予定をマスタースケジュールにしますか？</p>';
