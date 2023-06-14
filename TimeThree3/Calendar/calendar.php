@@ -239,7 +239,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     ?>
 <body class="team">
     <div class="button">
-        <button href="" class="but">ログアウト</button>
+        <button type = "submit" formaction="../logout.php">ログアウト</button>
     </div>
 
 </div>
