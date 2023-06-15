@@ -22,8 +22,14 @@ if ($timestamp === false) {
     $timestamp = strtotime($ym . '-01');
 }
 
+
 // 今日の日付 フォーマット　例）2021-06-3
-@ -31,92 +32,91 @@
+$today = date('Y-m-j');
+
+// カレンダーのタイトルを作成　例）2021年6月
+$html_title = date('Y年n月', $timestamp);
+
+
 // 方法１：mktimeを使う mktime(hour,minute,second,month,day,year)
 $prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
 $next = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)+1, 1, date('Y', $timestamp)));
@@ -57,8 +63,6 @@ $schedule = $dao->schedule_hyouji($_SESSION['group_id']);
  
 echo "<br><br>";
 for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
-
-for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     // 2021-06-3
     $date = $ym . '-' . $day;
 
@@ -70,7 +74,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     }
     foreach($schedule as $row){
         if($row["startday"] <= $date && $row["endday"] >= $date){
-            $week .= "<br>☺";
             $week .= '<br><button type = "submit" formaction="../schedule/schedule_check.php" name = schedule value ='.$row["schedule_id"].'>'.$row["title"].'</button>';
         }
     }
@@ -107,21 +110,27 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             font-family: 'Noto Sans JP', sans-serif;
             margin-top: 80px;
             font-size: 40px;
-            font-size: 90px;
+
         }
         .team{
-            background-image:url(img/haikei.jpg);
             background-image:url(../img/haikei.jpg);
         }
         a {
             text-decoration: none;
         }
-        th {
-            height: 30px;
+        .th {
             height: 100px;
             text-align: center;
         }
         td {
+            height: 200px;
+        }
+        .today {
+            background: orange !important;
+        }
+        th:nth-of-type(1), td:nth-of-type(1) {
+            color: red;
+        }
         th:nth-of-type(7), td:nth-of-type(7) {
             color: blue;
         }
@@ -150,9 +159,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 
         .buto{
             background-color: #40e0d0;
-            font-size: 25px;
-            font-weight: 700px;
-            line-height: 30px;
             font-size: 50px;
             font-weight: 50px;
             line-height: 50px;
@@ -224,30 +230,21 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 <body>
 <body class="team">
 
-<br><br>
 
-<form action="?" method="post"> 
-<button type = "submit" formaction="../logout.php">ログアウト</button><br>
-    
-<button type = "submit" formaction="../logout.php"class="buto">ログアウト</button>
+<form action="?" method="post">  
 
-<br><br>
+
 <?php 
     echo $_SESSION["group_name"];
     ?>
 <body class="team">
     <div class="button">
-        <button href="" class="but">ログアウト</button>
-        <!--<button>ログアウト</button>-->
+        <button type = "submit" formaction="../logout.php">ログアウト</button>
     </div>
-<div class="header">
-        <div class = "logo">
-            <img src="img/logo.png" width="600" alt="TimeThree">
-        </div>
+
 </div>
     <div class="container">
-        <h3 class="mb-5"><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
-        <div class = mb-5><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</div></a></h3>
+        <h3><div class = mb-5><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</div></a></h3>
         <table class="table table-bordered">
             <tr>
                 <th>日</th>
@@ -267,11 +264,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             </h1>
         </table>
         
-        <div class="button_solid017">/*6/12追加*/
-        <button type = "submit" formaction="../schedule/schedule_check.php">予定を確認する</button>
-        </div>
-        <div class="button_solid017">/*6/12追加*/
-        <button type = "submit" formaction="../schedule/schedule_addition.php">予定を追加する</button>
 
         <div class="sakusei">
         <button type = "submit" formaction="../schedule/schedule_check.php" class="buto">予定を確認する</button>
@@ -280,14 +272,8 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
         
 
     </div>
-        <br><br>
 
 
     </form>
-    <div class="sakusei">
-        <button href="" class="buto">作成</button>
-    </div>
-
 </body>
-<script>
 </html>
