@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+    background-color: 	#F0E68C;
+    margin-top: 170px;
+ } 
+
+ input{
+    font-size: 25px;
+    color: #000;/*文字色*/
+  border: solid 3px #000;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+ }

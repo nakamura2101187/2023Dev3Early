@@ -105,7 +105,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
     
 <div class="header">
 <div class = "logo">
@@ -153,6 +153,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 
         <div class="sakusei">
         <button type = "submit" formaction="../schedule/schedule_check.php" class="buto">予定を確認する</button>
+        <div class="sakuseia">
         <button type = "submit" formaction="../schedule/schedule_addition.php" class="buto">予定を追加する</button>
         </div>
         

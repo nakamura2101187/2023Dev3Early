@@ -27,10 +27,6 @@
             color: blue;
         }
 
-        .button{
-            text-align: right;
-        text-align: right;
-        }
 
         .but{
             background-color: #40e0d0;
@@ -77,6 +73,7 @@
         
         /*6/12ここから追加*/
         .sakusei button {
+            
             float:right;
     position: relative;
     display: flex;
@@ -148,8 +145,8 @@
     border-radius: 1px;
     transition: 0.3s ease-in-out;
 }
-.logout button{
-    font-size: 50px;
+body{
+    font-size: 1000px;
 }
-/*試し*/
 
+/*試し*/
