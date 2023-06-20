@@ -6,8 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+         .a button{
+            font-size: 21px;
+        }
+        p textarea{
+            font-size: 35px;
+            color: #000;/*文字色*/
+            border: solid 3px #000;/*線色*/
+            padding: 0.5em;/*文字周りの余白*/
+            border-radius: 0.5em;/*角丸*/
+        }
+    </style>
 
-    <title>Document</title>    
+    <title>Document</title>
 </head>
 <body>
 
