@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -36,7 +36,7 @@ session_start();
 require '../DAO.php';
 $dao = new DAO();
 
-$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"]);
+$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"],$_SESSION["user"]["name"]);
 
     echo "アカウントの登録が完了しました！";
 
@@ -46,6 +46,6 @@ $user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"]);
     }
 ?>
 <form action="?" method="post"> 
-    <button type = "submit" formaction="../Login/test.php">登録する</button>
+    <button type = "submit" formaction="../Login/login.php">ログイン画面に戻る</button>
 </form>
 </body>
