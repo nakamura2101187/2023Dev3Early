@@ -27,21 +27,6 @@
             color: blue;
         }
 
-        tr.yotei_button {
-            width: 10px;
-            height: auto;
-            white-space: normal;
-        }
-        
-    tr.yotei_button.long-text {
-        font-size: 12px; /* 文字サイズを小さくする */
-        line-height: 14px; /* 行の高さを調整する */
-      }
-
-        .button{
-            text-align: right;
-        text-align: right;
-        }
 
         .but{
             background-color: #40e0d0;
@@ -88,6 +73,7 @@
         
         /*6/12ここから追加*/
         .sakusei button {
+            
             float:right;
     position: relative;
     display: flex;
@@ -159,8 +145,35 @@
     border-radius: 1px;
     transition: 0.3s ease-in-out;
 }
-.logout button{
-    font-size: 50px;
+.button button{
+    margin-left: 750px;
+    font-size: 30px;
+    border-radius: 50%;
+  line-height: 100px;
+  width: 125px;
+  height: 125px;
+  padding: 0;
+  -webkit-box-shadow: 0 5px 0 #40e0d0;
+  box-shadow: 0 5px 0 #40e0d0;
 }
-/*試し*/
+.button button:hover {
+    -webkit-transform: translate(0, 3px);
+    transform: translate(0, 3px);
+    -webkit-box-shadow: 0 2px 0 #40e0d0;
+    box-shadow: 0 2px 0 #40e0d0;
+  }
+  .container table{
+    font-size: 35px;
+  }
+  /*
+.today button{
+    border-radius: 50%;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  -webkit-box-shadow: 0 5px 0 #40e0d0;
+  box-shadow: 0 5px 0 #40e0d0;
+  }*/
 
+/*試し*/
