@@ -162,6 +162,8 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 
         <div class="sakusei">
         <button type = "submit" formaction="../schedule/schedule_check.php" class="buto">予定を確認する</button>
+        </div>
+        <div class="sakuseia">
         <button type = "submit" formaction="../schedule/schedule_addition.php" class="buto">予定を追加する</button>
         </div>
         

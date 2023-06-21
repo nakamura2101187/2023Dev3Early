@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">   
 
     <title>Document</title>    
 </head>
@@ -52,13 +53,15 @@ if(isset($_POST['schedule'])){
     <p>メモ
     <textarea name="memo"></textarea>
     <p>入力する予定をマスタースケジュールにしますか？</p>';
-    echo '<button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button>';
+    //echo '<button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button>';//
 }
 
 ?>
     <input type="checkbox" value="1" name="mastar"><br>
-
+    <div class="a">
+    <button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button>
     <button type = "submit" formaction="schedule_check.php">予定確認画面へと戻る</button>
+    </div>
 
 </form>
 </body>
