@@ -5,21 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>
-         .a button{
-            font-size: 21px;
-        }
-        p textarea{
-            font-size: 35px;
-            color: #000;/*文字色*/
-            border: solid 3px #000;/*線色*/
-            padding: 0.5em;/*文字周りの余白*/
-            border-radius: 0.5em;/*角丸*/
-        }
-    </style>
 
-    <title>Document</title>
+    <title>Document</title>    
 </head>
 <body>
 
@@ -53,6 +40,7 @@ if(isset($_POST['schedule'])){
     <p>メモ
     <textarea name="memo" value = '.$schedule[0]["memo"].' ></textarea>
     <p>入力する予定をマスタースケジュールにしますか？</p>';
+    echo '<button type = "submit" name = addition value = '.$schedule[0]["schedule_id"].' formaction="schedule_addition_ok.php">予定を変更する</button>';
 
 }else{
     echo '<input type="text" name="title" placeholder="タイトル">
@@ -64,15 +52,13 @@ if(isset($_POST['schedule'])){
     <p>メモ
     <textarea name="memo"></textarea>
     <p>入力する予定をマスタースケジュールにしますか？</p>';
+    echo '<button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button>';
 }
 
 ?>
-    <input type="checkbox" value="1" name="mastar" checked><br>
+    <input type="checkbox" value="1" name="mastar"><br>
 
-    <div class="a">
-    <button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button>
     <button type = "submit" formaction="schedule_check.php">予定確認画面へと戻る</button>
-    </div>
 
 </form>
 </body>

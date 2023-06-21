@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        button{
-            font-size: 21px;
-        }
-        p{
-            font-size: 22px;
-        }
-    </style>
 
     <title>Document</title>    
 </head>
@@ -35,10 +26,15 @@ $et2 = intval($et);
 
 echo $sd2,$st2,$ed2,$et2;
 
-echo "<br>".$_POST['mastar'];
+$mastar = isset($_POST['mastar']) ? $_POST['mastar'] : null;
 
-$searchArray = $dao->insert_schedule($_SESSION['group_id'],$_SESSION['id'],$_POST['title'],$sd,$st,$ed,$et,$_POST['memo'],$_POST['mastar']);
+echo "<br>".$mastar;
 
+if(!isset($_POST["addition"])){
+$searchArray = $dao->insert_schedule($_SESSION['group_id'],$_SESSION['id'],$_POST['title'],$sd,$st,$ed,$et,$_POST['memo'],$mastar);
+}else{
+$searchArray = $dao->update_schedule($_POST['addition'],$_POST['title'],$sd,$st,$ed,$et,$_POST['memo'],$mastar);
+}
 ?>
 
 <form action="?" method="post">

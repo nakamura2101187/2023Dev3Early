@@ -36,7 +36,7 @@ session_start();
 require '../DAO.php';
 $dao = new DAO();
 
-$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"],$_SESSION["user"]["name"]);
+$user = $dao ->insertUser($_SESSION['user']['mail'],$_SESSION["user"]["pass"]);
 
     echo "アカウントの登録が完了しました！";
 

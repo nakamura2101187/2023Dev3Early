@@ -1,7 +1,7 @@
 <?php
 class DAO{
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=timethree;charset=utf8','webuser','abccsd2');
+        $pdo = new PDO('mysql:host=localhost;dbname=kaihatu2;charset=utf8','a','abccsd2');
         return $pdo;
     }
 
@@ -158,9 +158,31 @@ class DAO{
         $ps->execute();
     }
 
+    public function update_schedule($id,$title,$startday,$starttime,$endday,$endtime,$memo,$mastar){
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE schedule
+                SET  title = ?,startday = ?,starttime = ?,endday = ?,endtime = ?,memo = ?,mastar = ?
+                WHERE schedule_id = ?";
+
+        $ps = $pdo->prepare($sql);
+
+        $ps->bindValue(1,$title,PDO::PARAM_STR);
+        $ps->bindValue(2,$startday,PDO::PARAM_INT);
+        $starttime = substr($starttime, 0, 2) . ':' . substr($starttime, 2, 2) . ':00';
+        $ps->bindValue(3,$starttime,PDO::PARAM_INT);
+        $ps->bindValue(4,$endday,PDO::PARAM_INT);
+        $endtime = substr($endtime, 0, 2) . ':' . substr($endtime, 2, 2) . ':00';
+        $ps->bindValue(5,$endtime, PDO::PARAM_INT);
+        $ps->bindValue(6,$memo,PDO::PARAM_STR);
+        $ps->bindValue(7,$master, PDO::PARAM_INT);
+        $ps->bindValue(8,$id,PDO::PARAM_STR);
+
+        $ps->execute();
+    }
+
     public function mastar_check($id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM schedule WHERE schedule_id = ?";
+        $sql = "SELECT * FROM schedule WHERE schedule_id = ? AND mastar = 1";
         $ps = $pdo ->prepare($sql);
 
         $ps->bindValue(1,$id,PDO::PARAM_INT);
