@@ -125,8 +125,9 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 <body>
 <body class="team">
 
-
+<div class="v"><!--グループ名表示cssのクラス名-->
 <form action="?" method="post">  
+
 
 
 <?php 
@@ -136,6 +137,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     <div class="button">
         <button type = "submit" formaction="../logout.php">ログアウト</button>
     </div>
+</div>
 
 </div>
     <div class="container">

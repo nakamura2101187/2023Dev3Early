@@ -1,7 +1,7 @@
 .container {
     font-family: 'Noto Sans JP', sans-serif;
     margin-top: 80px;
-    font-size: 40px;
+    font-size: 60px;
 
 }
 .team{
@@ -165,6 +165,15 @@ box-shadow: 0 2px 0 #40e0d0;
 .container table{
 font-size: 35px;
 }
+body{
+    background-color: 	#40e0d0;
+    text-align: center;
+ }
+ .v form{
+    font-size: 110px;
+    margin-top: 20px;
+    color: #40e0d0;
+ }
 /*
 .today button{
 border-radius: 50%;
