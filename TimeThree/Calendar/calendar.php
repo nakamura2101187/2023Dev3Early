@@ -114,7 +114,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="calendar.css"> 
 
 <div class="header">
 <div class = "logo">
@@ -130,14 +130,17 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 
 
 
+
 <?php 
     echo $_SESSION["group_name"];
     ?>
+   
 <body class="team">
     <div class="button">
         <button type = "submit" formaction="../logout.php">ログアウト</button>
     </div>
 </div>
+
 
 </div>
     <div class="container">
@@ -159,6 +162,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
                 }
             ?>
             </h1>
+
         </table>
         
 
