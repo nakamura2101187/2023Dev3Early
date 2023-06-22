@@ -2,6 +2,7 @@
     font-family: 'Noto Sans JP', sans-serif;
     margin-top: 80px;
     font-size: 60px;
+    margin-left: 70px;
 
 }
 .team{
@@ -63,7 +64,6 @@ th:nth-of-type(7), td:nth-of-type(7) {
 }
 .container table{
     background-color: #40e0d0;
-
     width: 800px;
     height: 1000px;
 }
@@ -73,14 +73,14 @@ th:nth-of-type(7), td:nth-of-type(7) {
 
 /*6/12ここから追加*/
 .sakusei button {
-    
+    left:20px;
     float:right;
 position: relative;
 display: flex;
 justify-content: space-around;
 align-items: center;
 margin: 0 auto;
-max-width: 240px;
+max-width: 260px;
 padding: 10px 25px;
 color: #543618;
 transition: 0.3s ease-in-out;
@@ -110,13 +110,14 @@ border-radius: 1px;
 transition: 0.3s ease-in-out;
 }
 .sakuseia button {
+    left: 100px;
 float:left;
 position: relative;
 display: flex;
 justify-content: space-around;
 align-items: center;
 margin: 0 auto;
-max-width: 240px;
+max-width: 260px;
 padding: 10px 25px;
 color: #543618;
 transition: 0.3s ease-in-out;
@@ -175,7 +176,9 @@ body{
     color: #40e0d0;
  }
  .mb-5{
-    /*background-color: #000;*/
+    background-color: #000;
+    font-size: 50px;
+    margin-left: 90px;
  }
 /*
 .today button{
