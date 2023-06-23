@@ -180,6 +180,13 @@ body{
     font-size: 50px;
     margin-left: 90px;
  }
+td button{
+padding: 0.01em 0.1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
 /*
 .today button{
 border-radius: 50%;
