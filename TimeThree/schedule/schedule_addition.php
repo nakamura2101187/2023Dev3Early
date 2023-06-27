@@ -40,8 +40,9 @@ if(isset($_POST['schedule'])){
     <input type="date" name="endday" value = '.$schedule[0]["endday"]. '><input type="time" name="endtime" value = '.$schedule[0]["endtime"]. '><br>
     <p>メモ
     <textarea name="memo" value = '.$schedule[0]["memo"].' ></textarea>
-    <p>入力する予定をマスタースケジュールにしますか？</p>';
-    echo '<button type = "submit" name = addition value = '.$schedule[0]["schedule_id"].' formaction="schedule_addition_ok.php">予定を変更する</button>';
+    <p>入力する予定をマスタースケジュールにしますか？<br>
+    <input type="checkbox" value="1" name="mastar"><br></p>';
+    echo '<div class ="a"><button type = "submit" name = addition value = '.$schedule[0]["schedule_id"].' formaction="schedule_addition_ok.php">予定を変更する</button>';
 
 }else{
     echo '<input type="text" name="title" placeholder="タイトル">
@@ -52,12 +53,12 @@ if(isset($_POST['schedule'])){
 
     <p>メモ
     <textarea name="memo"></textarea>
-    <p>入力する予定をマスタースケジュールにしますか？</p>';
+    <p>入力する予定をマスタースケジュールにしますか？<br>
+    <input type="checkbox" value="1" name="mastar"><br></p>';
     echo '<div class ="a"><button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button></div>';
 }
 
 ?>
-    <input type="checkbox" value="1" name="mastar"><br>
     <div class="a">
     <button type = "submit" formaction="schedule_check.php">予定確認画面へと戻る</button>
     </div>
