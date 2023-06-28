@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+ <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+ <meta name="format-detection"content="telephone=no">
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta http-equir="content-type" charset = "UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">   
 </head>
 <body>
+<style>
+    body{
+       text-align: center;
+       background-color: 	#F0E68C;
+       font-family: "MS 明朝";  
+       font-size : 25px;
+    } 
+    button {
+font-family: "MS 明朝"; 
+padding: 10px 15px; 
+display: block;
+margin: auto;
+border-radius: 15px;
+background-color:		#C0C0C0;
+}
+</style>
 
 <?php
 
@@ -59,19 +78,25 @@ foreach($schedule as $check){
                         if($mastar[0]["account_id"] == $_SESSION["id"]){
                             echo $_SESSION["id"];
                             echo '<br><button type = "submit" formaction="schedule_addition.php" name = schedule value ='. $check["schedule_id"] .' >予定を変更する</button>
-                            <button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br><br>';
+                            <button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br>';
                         }else{ 
                             echo "この予定はマスタ予定なので、登録者以外は変更できません<br>";
                         }
                         }else{
                             echo '<br><button type = "submit" formaction="schedule_addition.php" name = schedule value ='. $check["schedule_id"] .' >予定を変更する</button>
-                            <button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br><br>';
+                            <button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br>';
                         }
                     }
                 
                 ?><br><br>
                 
                 
+                <button type = "submit" formaction="schedule_addition.php">予定を追加する</button>
+                
+            </form>
+        </body>
+<script>
+
                 <button type = "submit" formaction="schedule_addition.php">予定を追加する</button>
                 
             </form>
