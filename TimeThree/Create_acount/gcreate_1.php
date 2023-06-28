@@ -19,12 +19,14 @@
  body{
        text-align: center;
        background-color: 	#F0E68C;
+       font-family: "MS 明朝";  
+       font-size : 20px; 
     } 
     h2 {
     font-family: "MS 明朝";  
     text-align:center;
-    font-size : 20px; 
-    line-height : 2.3; 
+    font-size : 25px; 
+    line-height : 3; 
 }
 button {
 font-family: "MS 明朝"; 
@@ -37,7 +39,7 @@ background-color:		#C0C0C0;
 input{
   font-family: "MS 明朝";
   padding: 5px 10px;
-  width: 600x;
+  width: 350px;
   border-radius: 10px;
   border: 2px solid black;
   background-color:	#C0C0C0;
@@ -50,19 +52,17 @@ input{
 </div>
 <form action="?" method="post">
 <br>
-<div class="container mt-1">
-グループ名:<input type="text" name="g_name"placeholder="グループ名を入力してください">
+<div class="container mt-3">
+グループ名: <input type="text" name="g_name"placeholder="グループ名を入力してください">
 </div>
-<div class="container mt-1">
-あいことば:　　<input type="text" name="aikotoba"placeholder="あいことばを入力してください">
+<div class="container mt-3">
+あいことば: <input type="text" name="aikotoba"placeholder="あいことばを入力してください">
 </div>
 <br>
 <div class="container mt-1">
 <button type = "submit" formaction="../Login/g_login.php">グループログイン画面へ戻る</button><br>
 </div>
-<div class="container mt-1">
 <button type = "submit" formaction="../Create_acount/gcreate_2.php">登録する</button><br>
-</div>
 </form>
 </body>
 </html>
