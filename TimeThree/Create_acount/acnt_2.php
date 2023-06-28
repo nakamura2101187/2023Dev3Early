@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     .tema{
         background-image: url(img/haikei2.jpg);
     }
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
  <meta name="format-detection"content="telephone=no">
@@ -41,14 +41,14 @@
 h3 {
     font-family: "MS 明朝";  
     text-align:center;
-    font-size : 15px; 
-    line-height : 4; 
+    font-size : 20px; 
+    line-height : 3; 
 }
 h4 {
     font-family: "MS 明朝";  
     text-align:center;
-    font-size : 15px; 
-    line-height : 4; 
+    font-size : 20px; 
+    line-height : 3; 
 }
 button {
     font-family: "MS 明朝";  
@@ -101,7 +101,7 @@ $dao = new DAO();
      ?>
 
 <form action="?" method="post"> 
-    <button type='submit' formaction="acnt_1.php">修正する</button>
+    <button type='submit' formaction="acnt_1.php">修正する</button><br>
     <button type='submit' formaction="acnt_3.php">登録する</button>
 </form>
 </body>
