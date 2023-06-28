@@ -1,7 +1,7 @@
 <?php
 class DAO{
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=kaihatu2;charset=utf8','a','abccsd2');
+        $pdo = new PDO('mysql:host=localhost;dbname=timetree;charset=utf8','webuser','abccsd2');
         return $pdo;
     }
 
