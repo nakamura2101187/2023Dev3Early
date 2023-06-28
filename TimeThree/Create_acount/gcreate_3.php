@@ -16,7 +16,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新規登録完了画面</title>
-   
+    <style>
+   body{
+       text-align: center;
+       background-color: 	#F0E68C;
+       font-family: "MS 明朝";
+       font-size : 20px; 
+    line-height : 3;
+    } 
+    button {
+font-family: "MS 明朝"; 
+padding: 5px 10px; 
+display: block;
+margin: auto;
+border-radius: 15px;
+background-color:		#C0C0C0;
+}     
+</style>
 </head>
 <body class="tema">
 <?php
@@ -48,6 +64,11 @@ $g = 0;
         unset($row);
     }
 ?>
+<form action="?" method="post"> 
+<div class="container mt-3">
+    <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>
+</div>
+</form>
 <form action="?" method="post"> 
 <div class="container mt-3">
     <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>
