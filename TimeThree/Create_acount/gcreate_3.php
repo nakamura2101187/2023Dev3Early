@@ -20,6 +20,9 @@
    body{
        text-align: center;
        background-color: 	#F0E68C;
+       font-family: "MS 明朝";
+       font-size : 20px; 
+    line-height : 3;
     } 
     button {
 font-family: "MS 明朝"; 
@@ -61,6 +64,11 @@ $g = 0;
         unset($row);
     }
 ?>
+<form action="?" method="post"> 
+<div class="container mt-3">
+    <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>
+</div>
+</form>
 <form action="?" method="post"> 
 <div class="container mt-3">
     <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>
