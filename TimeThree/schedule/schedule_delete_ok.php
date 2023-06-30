@@ -9,7 +9,7 @@
  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta http-equir="content-type" charset = "UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css1">
+<link rel="stylesheet" href="style2.css">
     <title>Document</title>    
 </head>
 <body>
