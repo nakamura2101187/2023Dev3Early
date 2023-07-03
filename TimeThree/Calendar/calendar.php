@@ -114,6 +114,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css"> 
     <link rel="stylesheet" href="calendar.css"> 
 
 <div class="header">
@@ -126,6 +127,26 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
 <body class="team">
 
 <div class="v"><!--グループ名表示cssのクラス名-->
+    <!-- toggle section -->
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <!-- sidebar section -->
+    <div class="sidebar">
+      <header>
+
+      </header>
+      <ul>
+        <li>
+          <a href="../logout.php"><i class="fas fa-qrcode"></i>ログアウト</a>
+        </li>
+        <li>
+          <a href="../Create_acount/acnt_1.php"><i class="fas fa-calendar-week"></i>グループ追加</a>
+        </li>
+      </ul>
+    </div>
 <form action="?" method="post">  
 
 
@@ -136,9 +157,9 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
     ?>
    
 <body class="team">
-    <div class="button">
+<!--    <div class="button">
         <button type = "submit" formaction="../logout.php">ログアウト</button>
-    </div>
+    </div>-->
 </div>
 
 
