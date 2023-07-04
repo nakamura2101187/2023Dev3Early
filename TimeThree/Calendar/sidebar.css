@@ -63,10 +63,10 @@ label #cancel {
 
 label #btn {
   left: 40px;
-  top: 25px;
+  top: 50px;
   font-size: 100px;
   color: #fff;
-  padding: 30px 40px;
+  padding: 20px 50px;
   transition: all 0.5s;
 }
 
@@ -74,10 +74,10 @@ label #cancel {
   z-index: 10;
   /* left: 195px; 見やすいように最初はこれ*/
   left: -100px;
-  top: 17px;
+  top: 48px;
   font-size: 100px;
   color: #fff;
-  padding: 35px 40px;
+  padding: 20px 50px;
   transition: all 0.5s;
 }
 
