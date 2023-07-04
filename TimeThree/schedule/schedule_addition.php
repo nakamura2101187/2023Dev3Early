@@ -53,7 +53,7 @@ if(isset($_POST['schedule'])){
 
     <p>メモ
     <textarea name="memo"></textarea>
-    <p>入力する予定をマスタースケジュールにしますか？<br>
+    <p>入力する予定を個人の予定にしますか？<br>
     <input type="checkbox" value="1" name="mastar"><br></p>';
     echo '<div class ="a"><button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button></div>';
 }
