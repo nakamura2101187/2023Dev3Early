@@ -28,7 +28,7 @@
     h2 {
     font-family: "MS 明朝";      
     text-align:center;
-    font-size : 25px; 
+    font-size : 19px; 
     line-height : 5; 
 }
 button {
