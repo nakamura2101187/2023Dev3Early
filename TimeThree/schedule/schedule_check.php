@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +38,6 @@ $dao = new DAO();
 
 $a = 0;
 
-session_start();
 
 if(isset($_POST['schedule'])){
     $a = $a + $_POST['schedule'];

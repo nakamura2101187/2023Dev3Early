@@ -1,4 +1,6 @@
-
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,6 @@
 
 <?php
 
-session_start();
 
 require '../DAO.php';
 $dao = new DAO();
@@ -39,7 +40,9 @@ if(isset($_POST['schedule'])){
     <p>終了日時</p>    
     <input type="date" name="endday" value = '.$schedule[0]["endday"]. '><input type="time" name="endtime" value = '.$schedule[0]["endtime"]. '><br>
     <p>メモ
+    <div class="z">
     <textarea name="memo" value = '.$schedule[0]["memo"].' ></textarea>
+    </div>
     <p>入力する予定をマスタースケジュールにしますか？<br>
     <input type="checkbox" value="1" name="mastar"><br></p>';
     echo '<div class ="a"><button type = "submit" name = addition value = '.$schedule[0]["schedule_id"].' formaction="schedule_addition_ok.php">予定を変更する</button>';
@@ -52,7 +55,9 @@ if(isset($_POST['schedule'])){
     <input type="date" name="endday"><input type="time" name="endtime"><br>
 
     <p>メモ
+    <div class="z">
     <textarea name="memo"></textarea>
+    </div>
     <p>入力する予定を個人の予定にしますか？<br>
     <input type="checkbox" value="1" name="mastar"><br></p>';
     echo '<div class ="a"><button type = "submit" formaction="schedule_addition_ok.php">予定を追加する</button></div>';
@@ -65,4 +70,3 @@ if(isset($_POST['schedule'])){
 
 </form>
 </body>
-

@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,6 @@
 <body>
 
 <?php
-session_start();
 
 require '../DAO.php';
 $dao = new DAO();

@@ -1,4 +1,16 @@
+<?php 
+session_start(); //セッションを開始する 
 
+if(isset($_GET['message'])){
+$message = $_GET['message'];
+}
+
+//セッションの情報が登録されている場合、グループログイン画面へと遷移する
+if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
+    header('Location: g_login.php');
+}
+
+?>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -61,22 +73,6 @@ p{
 
 <body>
 
-
-
-<?php
-//セッションを開始する
-session_start();
-
-if(isset($_GET['message'])){
-$message = $_GET['message'];
-}
-
-//セッションの情報が登録されている場合、グループログイン画面へと遷移する
-if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
-    header('Location: g_login.php');
-}
-
-?>
 <form action="login_check.php" method="post">
     <br><br>
     <div id="error-message">
@@ -102,6 +98,34 @@ if(isset($_SESSION["mail"]) == true && isset($_SESSION["name"]) == true){
     <button type = "submit">ログイン</button>
 </div>
 </form>
+<script type="text/javascript">
+function check(){
+    const mailPattern = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+    let mail = document.userins.mail.value;
+    let pass = document.userins.pass.value;
+    let isSuccess = true;
+
+    if(mailPattern.test(mail) == false && pass.length < 6){
+        alert('メールアドレス、パスワードの形式が不正です。\nパスワードは6文字以上の必要があります');
+        isSuccess = false;
+        return false;
+    }
+    else if(mailPattern.test(mail) == false){
+            alert('メールアドレスの形式が不正です。');
+            isSuccess = false;
+            return false;
+    }
+    else if(pass.length < 6){
+        alert('パスワードは6文字以上の必要があります');
+        isSuccess = false;
+        return false;
+    }
+    if(isSuccess == true){
+        return true;
+    }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <!--
     <script>

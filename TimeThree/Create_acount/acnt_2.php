@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <html lang="en">
@@ -10,13 +13,14 @@
     .tema{
         background-image: url(img/haikei2.jpg);
     }
+    </style>
 
- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
- <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
- <meta name="format-detection"content="telephone=no">
- <meta name="apple-mobile-web-app-capable" content="yes" />
- <meta name="apple-mobile-web-app-status-bar-style" content="black" />
- <style type="text/css">*{margin:0;padding:0; border:0;}</style> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection"content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<style type="text/css">*{margin:0;padding:0; border:0;}</style> 
 <meta http-equir="content-type" charset = "UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../css/acnt_2.css">
@@ -71,7 +75,6 @@ input{
 <body class="tema">
     <title>新規登録完了画面</title>
 <?php
-session_start();
 
 require '../DAO.php';
 $dao = new DAO();

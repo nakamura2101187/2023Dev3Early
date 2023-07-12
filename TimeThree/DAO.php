@@ -1,7 +1,8 @@
 <?php
 class DAO{
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=timetree;charset=utf8','webuser','abccsd2');
+        $pdo = new PDO('mysql:host=localhost;dbname=timethree;charset=utf8','webuser','abccsd2');
+        //$pdo = new PDO('mysql:host=mysql215.phy.lolipop.lan;dbname=LAA1417493-timethree;charset=utf8','LAA1417493','timethree');
         return $pdo;
     }
 
@@ -158,7 +159,7 @@ class DAO{
         $ps->execute();
     }
 
-    public function update_schedule($id,$title,$startday,$starttime,$endday,$endtime,$memo,$mastar){
+    public function update_schedule($id,$title,$startday,$starttime,$endday,$endtime,$memo,$master){
         $pdo = $this->dbConnect();
         $sql = "UPDATE schedule
                 SET  title = ?,startday = ?,starttime = ?,endday = ?,endtime = ?,memo = ?,mastar = ?

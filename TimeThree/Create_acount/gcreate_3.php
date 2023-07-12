@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +39,6 @@ background-color:		#C0C0C0;
 </head>
 <body class="tema">
 <?php
-session_start();
 
 require '../DAO.php';
 $dao = new DAO();
@@ -69,8 +71,5 @@ $g = 0;
     <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>
 </div>
 </form>
-<form action="?" method="post"> 
-<div class="container mt-3">
-    <button type = "submit" formaction="../Login/g_login.php">グループログイン画面に戻る</button>
-</div>
-</form>
+</body>
+</html>

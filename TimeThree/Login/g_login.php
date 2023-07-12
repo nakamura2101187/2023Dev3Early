@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,8 +85,7 @@ p{
 </script>
 <?php
 
-//セッションの開始
-session_start();
+
 
 if(isset($_GET['message'])){
     $message = $_GET['message'];

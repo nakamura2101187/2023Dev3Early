@@ -62,24 +62,56 @@ label{
 <body class="tema">
 <div class="container mt-1">
 <h1>新規登録画面</h1>
-<div class="mail">
-<form action="?" method="post">
-<label for="mail" class="from-label">メールアドレス</label><br>
-<input type="text" class="from-control" name="mail"placeholder="mailaddress">
-</div>
-<div class="container mt-2">
-<label for="password" class="from-label">パスワード</label><br>
-<input type="password" class="from-control" name="pass"placeholder="password">
-</div>
-<div class="container mt-2">
-<label for="nickname" class="from-label">ニックネーム</label><br>
-<input type="text" class="from-control" name="name"placeholder="ニックネーム">
-</div>
-<div class="container mt-4">
-<button type = "submit" formaction="../Login/login.php">ログイン画面へ戻る</button><br>
-</div>
-<button type = "submit" formaction="../Create_acount/acnt_2.php">登録する</button><br>
+<form action="acnt_2.php" name="createAccount" method="post" onsubmit="return check()"><!-- ここでアクションにURL書けばformactionいらない -->
+    <div class="mail">
+        <label for="mail" class="from-label">メールアドレス</label><br>
+        <input type="text" class="from-control" name="mail"placeholder="mailaddress">
+    </div>
+    <div class="container mt-2">
+        <label for="password" class="from-label">パスワード</label><br>
+        <input type="password" class="from-control" name="pass"placeholder="password">
+    </div>
+    <div class="container mt-2">
+        <label for="nickname" class="from-label">ニックネーム</label><br>
+        <input type="text" class="fromcontrol" name="name"placeholder="ニックネーム">
+    </div>
+    <div class="container mt-4">
+        <button onclick="history.back()">ログイン画面へ戻る</button><br>
+    </div>
+
+    <button type = "submit" onsubmit="return check()">登録する</button><br>
 </form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </div>
 </body>
+
+<script>
+function check(){
+    const mailPattern = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+    let mail = document.createAccount.mail.value;
+    let pass = document.createAccount.pass.value;
+    let isSuccess = true;
+
+    if(mailPattern.test(mail) == false && pass.length < 6){
+        alert('メールアドレス、パスワードの形式が不正です。\nパスワードは6文字以上の必要があります');
+        isSuccess = false;
+        return false;
+    }
+    else if(mailPattern.test(mail) == false){
+            alert('メールアドレスの形式が不正です。');
+            isSuccess = false;
+            return false;
+    }
+    else if(pass.length < 6){
+        alert('パスワードは6文字以上の必要があります');
+        isSuccess = false;
+        return false;
+    }
+    if(isSuccess == true){
+        return true;
+    }
+};
+</script>
+
 </html>

@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,6 @@ require '../DAO.php';
 $dao = new DAO();
 
 
-session_start();
 $_SESSION["delete_id"] = $_POST["delete"];
 
 echo $_SESSION["delete_id"];

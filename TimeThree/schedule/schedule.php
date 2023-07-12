@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,6 @@
 <body>
 
 <?php
-session_start();
 if(isset($_SESSION['mail'])==false || isset($_SESSION['pass'])==false || isset($_SESSION['word']) || isset($_SESSION['group_id'])){
     header('Location: ../2_Login/login.php');
 }

@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +46,6 @@ background-color:		#C0C0C0;
     require '../DAO.php';
 
     $dao = new DAO();
-    session_start();
 
  //　ユーザ情報をセッション関数に登録　//
     $_SESSION['group'] =
