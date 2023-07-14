@@ -22,8 +22,9 @@ $dao = new DAO();
 
 
 $_SESSION["delete_id"] = $_POST["delete"];
+$delete_title = $dao -> schedule_check(0,$_SESSION["delete_id"],1);
 
-echo $_SESSION["delete_id"];
+echo $delete_title[0]["title"];
 ?>
 
 

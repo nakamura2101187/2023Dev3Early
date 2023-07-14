@@ -145,6 +145,9 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
         <li>
           <a href="../Create_acount/gcreate_1.php"><i class="fas fa-calendar-week"></i>グループ追加</a>
         </li>
+        <li>
+          <a href="../Login/g_login.php"><i class="fas fa-calendar-week"></i>グループ切替</a>
+        </li>
       </ul>
     </div>
 <form action="?" method="post">  
