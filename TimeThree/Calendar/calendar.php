@@ -143,7 +143,7 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
           <a href="../logout.php"><i class="fas fa-qrcode"></i>ログアウト</a>
         </li>
         <li>
-          <a href="../Create_acount/acnt_1.php"><i class="fas fa-calendar-week"></i>グループ追加</a>
+          <a href="../Create_acount/gcreate_1.php"><i class="fas fa-calendar-week"></i>グループ追加</a>
         </li>
       </ul>
     </div>

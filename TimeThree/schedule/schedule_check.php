@@ -82,7 +82,7 @@ foreach($schedule as $check){
                             echo '<br><button type = "submit" formaction="schedule_addition.php" name = schedule value ='. $check["schedule_id"] .' >予定を変更する</button>
                             <button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br>';
                         }else{ 
-                            echo "この予定はマスタ予定なので、登録者以外は変更できません<br>";
+                            echo "<br>この予定は個人の予定なので変更できません<br>";
                         }
                         }else{
                             echo '<br><button type = "submit" formaction="schedule_addition.php" name = schedule value ='. $check["schedule_id"] .' >予定を変更する</button>
@@ -101,6 +101,5 @@ foreach($schedule as $check){
 
                 <button type = "submit" formaction="schedule_addition.php">予定を追加する</button>
                 
-            </form>
-        </body>
-<script>
+</script>
+</html>

@@ -1,3 +1,6 @@
+<?php //セッションを開始する 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="addition.css">   
+    <style>
+        .a button{
+                font-family: "MS 明朝"; 
+                padding: 10px 15px; 
+                display: block;
+                margin-top: -10px;
+                margin-left: 60px;
+                border-radius: 50px;
+                background-color:		#C0C0C0;
+        }
+    </style>
 
     <title>Document</title>    
 </head>
 <body>
 
 <?php
-session_start();
 require '../DAO.php';
 $dao = new DAO();
 
@@ -44,7 +57,7 @@ $searchArray = $dao->update_schedule($_POST['addition'],$_POST['title'],$sd,$st,
 
 <p>予定を追加しました</p>
 
-    <button type = "submit" formaction="../Calendar/calendar.php">カレンダー画面へ戻る</button>
+    <div class="a"><button type = "submit" formaction="../Calendar/calendar.php">カレンダー画面へ戻る</button></div>
 
 </form>
 </body>

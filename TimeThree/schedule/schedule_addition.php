@@ -8,6 +8,26 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="addition.css">   
+    <style>
+        .a button{
+                font-family: "MS 明朝"; 
+                padding: 10px 15px; 
+                display: block;
+                margin-top: -10px;
+                margin-left: 90px;
+                border-radius: 50px;
+                background-color:		#C0C0C0;
+        }
+        .b button{
+                font-family: "MS 明朝"; 
+                padding: 20px 15px; 
+                display: block;
+                margin-top: -5px;
+                margin-left: 50px;
+                border-radius: 50px;
+                background-color:		#C0C0C0;
+        }
+    </style>
 
     <title>Document</title>    
 </head>
@@ -43,7 +63,7 @@ if(isset($_POST['schedule'])){
     <div class="z">
     <textarea name="memo" value = '.$schedule[0]["memo"].' ></textarea>
     </div>
-    <p>入力する予定をマスタースケジュールにしますか？<br>
+    <p>入力する予定を個人の予定にしますか？<br>
     <input type="checkbox" value="1" name="mastar"><br></p>';
     echo '<div class ="a"><button type = "submit" name = addition value = '.$schedule[0]["schedule_id"].' formaction="schedule_addition_ok.php">予定を変更する</button>';
 
@@ -64,7 +84,7 @@ if(isset($_POST['schedule'])){
 }
 
 ?>
-    <div class="a">
+    <div class="b">
     <button type = "submit" formaction="schedule_check.php">予定確認画面へと戻る</button>
     </div>
 
