@@ -29,6 +29,9 @@ margin: auto;
 border-radius: 15px;
 background-color:		#C0C0C0;
 }
+.f{
+    font-size: 20px;
+}
 </style>
 
 <?php
@@ -81,8 +84,9 @@ foreach($schedule as $check){
                             echo $_SESSION["id"];
                             echo '<br><button type = "submit" formaction="schedule_addition.php" name = schedule value ='. $check["schedule_id"] .' >予定を変更する</button>
                             <button type = "submit" formaction="schedule_delete.php" name = delete value ='. $check["schedule_id"] .' >予定を削除する</button><br>';
+                            
                         }else{ 
-                            echo "<br>この予定は個人の予定なので変更できません<br>";
+                            echo "<div class=f><br>※この予定は個人の予定なので変更できません<br></div>";
                         }
                         }else{
                             echo '<br><button type = "submit" formaction="schedule_addition.php" name = schedule value ='. $check["schedule_id"] .' >予定を変更する</button>
