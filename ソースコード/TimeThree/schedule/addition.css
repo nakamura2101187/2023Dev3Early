@@ -1,0 +1,54 @@
+body{
+   text-align: center;
+   background-color: 	#F0E68C;
+   margin-top: 100px;
+   margin-bottom: 20px;
+} 
+
+input{
+   font-size: 25px;
+   color: #000;/*文字色*/
+ border: solid 3px #000;/*線色*/
+ padding: 0.5em;/*文字周りの余白*/
+ border-radius: 0.5em;/*角丸*/
+}
+p textarea{
+  font-size: 35px;
+  color: #000;/*文字色*/
+  border: solid 3px #000;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+.a button{
+  font-size: 21px;
+  margin-bottom: 13px;
+  font-family: "MS 明朝";      
+
+background-color:       #C0C0C0;
+}
+p textarea{
+  font-size: 35px;
+  color: #000;/*文字色*/
+  border: solid 3px #000;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+.n button{
+  font-size: 21px;
+}
+p{
+  font-size: 22px;
+}
+form button{
+  font-size: 23px;
+}
+.z textarea{
+  margin-right: 0px;
+  width:270px; 
+  height: 70px;
+  font-size: 35px;
+  color: #000;/*文字色*/
+  border: solid 3px #000;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}

@@ -1,0 +1,13 @@
+
+body{
+    text-align: center;
+    background-color: 	#F0E68C;
+ } 
+ button {
+font-family: "MS 明朝"; 
+padding: 5px 10px; 
+display: block;
+margin: auto;
+border-radius: 15px;
+background-color:		#C0C0C0;
+}     
