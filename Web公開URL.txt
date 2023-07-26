@@ -1,0 +1,9 @@
+GitHubリポジトリ URL
+https://github.com/nakamura2101187/2023Dev3Early
+
+
+Web公開URL
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+スマートフォンでの動作を想定しています
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+http://jolly-hita-0951.raindrop.jp/TimeThree/Login/login.php
