@@ -1,0 +1,44 @@
+body{
+   text-align: center;
+   background-color: 	#F0E68C;
+} 
+h1 {
+font-family: "MS 明朝";  
+text-align:center;
+font-size : 15px; 
+line-height : 4; 
+}
+h2 {
+font-family: "MS 明朝";     
+text-align:center;
+font-size : 15px; 
+line-height : 4; 
+}
+h3 {
+font-family: "MS 明朝";  
+text-align:center;
+font-size : 15px; 
+line-height : 4; 
+}
+h4 {
+font-family: "MS 明朝";  
+text-align:center;
+font-size : 15px; 
+line-height : 4; 
+}
+button {
+font-family: "MS 明朝";  
+padding: 5px 10px; 
+display: block;
+margin: auto;
+border-radius: 15px;
+background-color:		#C0C0C0;
+}
+input{
+font-family: "MS 明朝";   
+ padding: 5px 10px;
+ width: 600x;
+ border: 2px solid black;
+ background-color:	#C0C0C0;
+
+}
